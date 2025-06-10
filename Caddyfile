@@ -3,7 +3,7 @@
 }
 
 # 自动为所有请求的域名申请证书
-domain.com {
+Yourdomain.com {
     tls {
         dns dnspod {env.DNSPOD_API_TOKEN}
     }
