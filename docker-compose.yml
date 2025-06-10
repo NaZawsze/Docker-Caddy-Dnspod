@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  caddy:
+    image: caddy-dnspod
+    container_name: caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+    environment:
+      - DNSPOD_API_TOKEN=id,key  # Your DNSPod API
+    restart: unless-stopped
+
+volumes:
+  caddy_data:
+

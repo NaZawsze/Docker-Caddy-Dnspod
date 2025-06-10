@@ -1,0 +1,12 @@
+{
+    acme_dns dnspod {env.DNSPOD_API_TOKEN}
+}
+
+# 自动为所有请求的域名申请证书
+domain.com {
+    tls {
+        dns dnspod {env.DNSPOD_API_TOKEN}
+    }
+    respond "Hello, HTTPS World! 🚀"
+}
+
