@@ -8,6 +8,7 @@ env:
   DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
   DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
   IMAGE_NAME: nazawsze/caddy-dnspod
+  TAGS_NAME: 2.7.6-alpine
 
 jobs:
   build-and-push:
@@ -27,4 +28,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ env.IMAGE_NAME }}:latest
+          tags: ${{ env.IMAGE_NAME }}:${{ env.TAGS_NAME }}
